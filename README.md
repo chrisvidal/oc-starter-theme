@@ -31,6 +31,46 @@ A boilerplate for building web projects with Laravel Mix.
   * Watch Assets for changes `npx mix watch`
   * Compiling for production `npx mix --production`
 
+## October CMS
+
+The theme comes with the possiblity to add `blocks` for the _RainLabPages_ plugin.
+To create a new block:
+- add your new block in the file `meta/blocks.yaml`
+- add the corresponding partial under the folder `blocks`
+
+Example:
+To create a new Hero block.
+
+In `meta/blocks.yaml`, we will add
+
+```yaml
+hero:
+    name: Page Hero
+    description: Hero for pages
+    icon: icon-desktop
+    fields:
+        title:
+            label: Hero main title
+            span: auto
+            type: text
+        subheader:
+            label: Hero main title
+            span: auto
+            type: textarea
+```
+
+In `partials/blocks/hero.htm`
+
+```html
+<section class="bg-center bg-cover hero">
+  <div class="container">
+    <h1>{{ data.title }}</h1>
+    <p>{{ data.subheader }}</p>
+  </div>
+</section>
+```
+
+
 ## Futher reading
 
 * [Laravel Mix Documentation](https://laravel-mix.com/docs/6.0/installation) from [Jeffrey Way](https://laracasts.com/)

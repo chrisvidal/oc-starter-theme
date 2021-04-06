@@ -20,8 +20,6 @@ A boilerplate for building web projects with Laravel Mix.
 * Web server (Browsersync)
   * Watch files changes, inject style, browser auto-refresh and cross-device synchronization
 
-_Nunjunks templates are only present for the demo._
-
 ## Getting Started
 
 ### Quick Start
@@ -38,5 +36,5 @@ _Nunjunks templates are only present for the demo._
 * [Laravel Mix Documentation](https://laravel-mix.com/docs/6.0/installation) from [Jeffrey Way](https://laracasts.com/)
 
 ## License
-
-MIT © [Florian Bouvot](https://github.com/florianbouvot)
+Inspired by [laravel-mix-boilerplate](https://github.com/florianbouvot/laravel-mix-boilerplate/)
+MIT © [Chris Vidal](https://github.com/chrisvidal)

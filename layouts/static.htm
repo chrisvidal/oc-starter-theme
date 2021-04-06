@@ -1,0 +1,73 @@
+description = "Static"
+
+[staticMenu]
+code = "main"
+
+[wunderCustomerProfile]
+
+[Agent]
+
+[cart]
+showDiscountApplier = 1
+showTaxes = 1
+showShipping = 1
+showProceedToCheckoutButton = 0
+
+[mallDependencies]
+[staticPage]
+useContent = 1
+default = 0
+==
+{% put styles %}
+{% endput %}
+{% put scripts %}
+{% endput %}
+<!doctype html>
+<html lang="en" class="">
+<head>
+    {% partial 'site/meta' %}
+    <style>
+    .loading {
+        opacity: 0;
+    }
+    .unloading {
+        opacity: 0;
+        transition: opacity .3s ease-out;
+    }
+    .loaded {
+        opacity: 1;
+        transition: opacity 1s ease-out;
+    }
+</style>
+</head>
+<body class="font-body page-{{ this.page.id }} {{ this.layout.id }}" id="top">
+    <script>document.body.classList.add('loading');</script>
+
+    <div id="app" class="flex flex-col min-h-screen">
+        {% partial 'site/header' %}
+        <main class="flex-grow">
+            <!-- Repeater -->
+            {repeater name="sections" style="collapsed" groups="~/themes/oc-tailwind-starter/meta/blocks.yaml" tab="Blocks"}
+                {variable name="_dummy" type="text"}{/variable}
+            {/repeater}
+            <!-- Render blocks -->
+            {% for section in sections %}
+                {% partial 'blocks/' ~ section._group data=section %}
+            {% endfor %}
+            {% if staticPage.content %}
+            <section class="static section">
+                <div class="container">
+                    {% page %}
+                </div>
+            </section>
+            {% endif %}
+        </main>
+        {% partial 'site/footer' %}
+    </div>
+    <!-- SCROLL END -->
+
+    {% partial 'site/scripts'%}
+    {# partial 'site/scripts_alpine' #}
+
+</body>
+</html>

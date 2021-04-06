@@ -1,0 +1,152 @@
+hero:
+    name: Page Hero
+    description: Hero for pages
+    icon: icon-desktop
+    fields:
+        bg_img:
+            label: Hero Background Image
+            commentAbove: Optional. For desktop.
+            span: auto
+            type: mediafinder
+        bg_img_mobile:
+            label: Hero Background Image for mobile
+            commentAbove: Recommended for better mobile performance.
+            span: auto
+            type: mediafinder
+        bg_color:
+            label: Hero Background Color
+            commentAbove: Optional.
+            type: colorpicker
+            availableColors: ["transparent","#ffffff","#DCDADB","#B8B7B9","#969598","#f4f4f4","#f5f5f5","#f6f6f6","#f8f8f8","#5A5A5A"]
+            default: "transparent"
+            span: auto
+        heading:
+            label: Heading text
+            type: text
+            span: left
+        subheading:
+            label: Heading text
+            type: textarea
+            span: left
+
+intro:
+    name: Hero for homepage
+    description: Hero with slider for the homepage
+    icon: icon-desktop
+    fields:
+        # heading:
+        #     label: Heading text
+        #     type: text
+        #     span: auto
+        #     default: We are Azalea
+        # bg_color:
+        #     label: Hero Background Color
+        #     commentAbove: Optional.
+        #     type: colorpicker
+        #     availableColors: ["transparent","#ffffff","#DCDADB","#B8B7B9","#969598","#f4f4f4","#f5f5f5","#f6f6f6","#f8f8f8","#5A5A5A"]
+        #     default: "transparent"
+        #     span: auto
+        # subheading:
+        #     label: Heading text
+        #     type: textarea
+        #     span: auto
+        #     default: Developing new investment platforms and products. Azalea is an investor, developer, and manager of private assets, starting with private equity.
+        # bg_img:
+        #     label: Hero Background Image
+        #     commentAbove: Optional.
+        #     span: auto
+        #     type: mediafinder
+        #     mode: image
+        slider:
+            label: Slider
+            type: section
+            span: full
+        slide_transition:
+            label: Transition time between slides
+            commentAbove: Expressed in ms. 4000ms means 4s.
+            type: number
+            required: true
+            span: left
+            default: 4000
+        slides:
+            label: Slides
+            commentAbove: Optional.
+            type: repeater
+            form:
+                fields:
+                    type:
+                        label: Slide type
+                        type: balloon-selector
+                        span: auto
+                        default: image
+                        options:
+                            image: Image
+                            video: Video
+                    media:
+                        label: Image or Video
+                        commentAbove: Recommended JPG format for image and MP4 for video
+                        type: mediafinder
+                        mode: file
+                        span: auto
+                    _heading_section:
+                        type: section
+                        label: Slider text
+                    heading:
+                        label: Heading
+                        commentAbove: Optional
+                        type: text
+                        span: auto
+                    link:
+                        label: Link
+                        commentAbove: Optional and only available for images
+                        type: text
+                        span: auto
+                        trigger:
+                            action: show
+                            field: type
+                            condition: value[image]
+                    subheading:
+                        label: Heading
+                        commentAbove: Optional
+                        type: textarea
+                        span: auto
+                        size: small
+richtext:
+    name: Rich content
+    description: Rich content
+    icon: icon-wpforms
+    fields:
+        heading:
+            label: Section title
+            commentAbove: Optional. If set, it will be displayed on the left column and the rich content will be display in the right column.
+            type: text
+            span: left
+
+        container_class:
+            label: Container style
+            placeholder: -- choose a style for the container --
+            commentAbove: Note that the container will always be 100% width on mobile.
+            span: right
+            type: balloon-selector
+            default: w-full
+            options:
+              lg:w-1/3: one third (1/3)
+              lg:w-1/4: one fourth (1/4)
+              lg:w-1/2: half (1/2)
+              lg:w-2/3: two third (2/3)
+              lg:w-3/4: three fourth (3/4)
+              lg:w-5/12: five twelveth (5/12)
+              lg:w-7/12: seven twelveth (7/12)
+              w-full: full width
+        use_border:
+            label: Use left border style?
+            span: right
+            type: balloon-selector
+            default: 1
+            options:
+                1: Yes
+                0: No
+        content:
+            label: Rich content
+            type: richeditor
+            size: huge

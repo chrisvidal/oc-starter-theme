@@ -1,0 +1,8 @@
+name: 'Tailwind CSS 2 Starter Theme'
+description: 'October CMS Tailwind CSS 2 Starter Theme'
+author: Voilaah
+homepage: 'https://voilaah.com'
+code: oc-tailwind-starter
+form: fields.yaml
+require:
+  - Rainlab.Pages

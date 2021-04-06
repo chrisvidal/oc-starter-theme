@@ -1,0 +1,40 @@
+description = "Default layout"
+
+[staticMenu mainMenu]
+code = "main-menu"
+==
+<!doctype html>
+<html lang="en">
+    <head>
+        {% partial 'site/meta' %}
+        <style>
+            .loading {
+                opacity: 0;
+            }
+            .unloading {
+                opacity: 0;
+                transition: opacity .3s ease-out;
+            }
+            .loaded {
+                opacity: 1;
+                transition: opacity 1s ease-out;
+            }
+        </style>
+    </head>
+    <body class="font-body page-{{ this.page.id }} {{ this.layout.id }}" id="top">
+        <script>document.body.classList.add('loading');</script>
+        {# id='app' is used by Vue; if you  use vue, you can add that id to the div below (for global vue instance) #}
+        <div id="app" class="flex flex-col min-h-screen">
+          {% partial 'site/header' %}
+          <main class="flex-grow">
+              {% page %}
+          </main>
+          {% partial 'site/footer' %}
+        </div>
+
+    {# scripts must be included AFTER the 'app' div, which may be used by Vue and disallow inline scipting #}
+    {% partial 'site/scripts' %}
+    {# partial 'site/scripts_alpine' #}
+</body>
+
+</html>

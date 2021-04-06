@@ -1,0 +1,39 @@
+tabs:
+    fields:
+        #TAB: General INFO
+        website_name:
+            tab: General
+            label: Website Name
+            type: text
+        website_author:
+            tab: General
+            label: Author
+            type: text
+            default: Voilaah
+        website_url:
+            tab: General
+            label: Website Url
+            type: text
+        description:
+            tab: General
+            label: Description
+            type: text
+            default: This is your website description
+        contact_email:
+            tab: General
+            label: Contact Email
+            type: text
+            span: auto
+        contact_phone:
+            tab: General
+            label: Contact Phone
+            type: text
+            span: auto
+        logo_header:
+            tab: General
+            label: Logo Header
+            type: mediafinder
+            mode: image
+            span: auto
+            imageHeight: 150
+            imageWidth: 150

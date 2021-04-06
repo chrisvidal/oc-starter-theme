@@ -24,7 +24,7 @@ hero:
             span: auto
             type: text
         subheader:
-            label: Hero main title
+            label: Hero sub header
             span: auto
             type: textarea
 ```

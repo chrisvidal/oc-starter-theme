@@ -2,7 +2,8 @@
 
 ## Development
 
-The theme comes with the possiblity to add `blocks` for the _RainLabPages_ plugin.
+The starter theme comes with the possiblity to add `blocks` for the _RainLabPages_ plugin.
+
 To create a new block:
 - add your new block in the file `meta/blocks.yaml`
 - add the corresponding partial under the folder `blocks`
@@ -41,7 +42,7 @@ In `partials/blocks/hero.htm`
 
 ## AlpineJS
 
-The theme comes with `AlpineJS`.
+The starter theme comes with `AlpineJS`.
 
 
 # Laravel Mix Boilerplate

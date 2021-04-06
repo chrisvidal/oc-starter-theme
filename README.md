@@ -1,5 +1,7 @@
 # October CMS
 
+## Development
+
 The theme comes with the possiblity to add `blocks` for the _RainLabPages_ plugin.
 To create a new block:
 - add your new block in the file `meta/blocks.yaml`
@@ -36,6 +38,10 @@ In `partials/blocks/hero.htm`
   </div>
 </section>
 ```
+
+## AlpineJS
+
+The theme comes with `AlpineJS`.
 
 
 # Laravel Mix Boilerplate
